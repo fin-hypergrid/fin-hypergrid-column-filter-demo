@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+</head>
+<body style="font-family:sans-serif; font-size:small; margin:8px">
+
+<div id="error" style="float:right; color:red"></div>
+
+<label style="cursor:help" for="filter-expression">Filter expression:</label>
+
+<span style="margin-left:3em">Syntax:</span>
+<label style="margin-left:1em" title="Traditional syntax (à la VB or SQL) converts:
+and  ⤏  &&
+or  ⤏  ||
+not  ⤏  !
+=  ⤏  ===
+<>  ⤏  !==">
+    <input id="trad-syntax" type="checkbox">
+    <span style="cursor:help">Traditional</span>
+</label>
+
+<label style="margin-left:1em" title="• Column name may be omitted when a subexpression begins with a relational operator
+• Equality operator may be omitted as well when the column name is omitted
+• Above applies to all AND'd or OR'd subexpressions within the column filter expression
+• 'or' or comma can be used for ORing instead of '||'
+• 'and' or semicolon can be used for ANDing instead of '&&'">
+    <input id="abbr-syntax" type="checkbox" checked>
+    <span style="cursor:help">Abbreviated</span>
+</label>
+
+<input id="filter-expression" type="text" readonly style="width:99%; margin:.5em 0 1em">
+
+<script src="build/index.js"></script>
+</body>
+</html>
