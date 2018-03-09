@@ -4,7 +4,7 @@
 
 ## Running the pre-built hosted app
 
-A pre-built version of `fin-hypergrid-column-filter-demo` is availble on GitHub pages [here](https://fin-hypergrid.github.io/fin-hypergrid-filtering-demo).
+A pre-built version of `fin-hypergrid-column-filter-demo` is availble on GitHub pages [here](https://fin-hypergrid.github.io/fin-hypergrid-column-filter-demo).
 
 ## Building it yourself
 
