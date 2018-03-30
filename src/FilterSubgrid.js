@@ -38,6 +38,13 @@ var FilterSubgrid = DataSourceBase.extend('FilterSubgrid', {
 
     setValue: function(x, y, value) {
         var column = this.grid.behavior.getColumn(x).properties.filter = value;
+    },
+
+    getCellEditorAt: function(columnIndex, rowIndex, editorName, cellEvent) {
+        return cellEvent.isDataColumn && (
+            cellEvent.grid.cellEditors.create('FilterEditor', cellEvent) ||
+            cellEvent.grid.cellEditors.create(editorName, cellEvent) // in case FilterEditor not defined
+        );
     }
 });
 

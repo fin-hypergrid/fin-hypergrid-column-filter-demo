@@ -22,6 +22,8 @@ var FilterSubgrid = require('./FilterSubgrid'),
     dataModels = require('fin-hypergrid/src/dataModels');
 
 dataModels.add(FilterSubgrid);
+
+
 grid.properties.showFilterRow = 1;
 grid.properties.subgrids = [
     'HeaderSubgrid',
@@ -34,6 +36,7 @@ var filterExpressionLabel = document.querySelector('label'),
     filterExpressionTextBox = document.getElementById('filter-expression'),
     traditionalSyntaxCheckBox = document.getElementById('trad-syntax'),
     alternateSyntaxCheckBox = document.getElementById('abbr-syntax'),
+    keyboardModeChooser = document.getElementById('keyboard-mode-chooser'),
     errorBox = document.getElementById('error');
 
 var columnNames = grid.behavior.schema.map(function(columnSchema) { return columnSchema.name; });
@@ -47,6 +50,14 @@ grid.addEventListener('fin-after-cell-edit', function f(e) {
 });
 
 alternateSyntaxCheckBox.onchange = traditionalSyntaxCheckBox.onchange = setFilter;
+
+// Bonus feature: support for immediate keyboard mode (see also the `getCellEditorAt` defined in FilterSubgrid)
+grid.cellEditors.add(require('./FilterEditor'));
+keyboardModeChooser.addEventListener('click', function(e) {
+    if (e.target.name === 'keyboard-mode') {
+        grid.properties.filteringMode = e.target.value; // see FilterEditor.js
+    }
+});
 
 // concatenate all column filters and call dataModel.setFilter
 function setFilter() {

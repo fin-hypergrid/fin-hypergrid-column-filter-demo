@@ -1,6 +1,6 @@
 {
   "name": "fin-hypergrid-column-filter-demo",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Sample code demonstrates column filters",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/fin-hypergrid/fin-hypergrid-column-filter-demo#readme",
   "dependencies": {
-    "datasaur-filter": "github:fin-hypergrid/datasaur-filter",
+    "datasaur-filter": "github:fin-hypergrid/datasaur-filter#3.0.0",
     "datasaur-local": "github:fin-hypergrid/datasaur-local#3.0.0",
     "fin-hypergrid": "github:joneit/core#v3.0.0"
   }
